@@ -7,4 +7,34 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="dialog_fullscreen" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
+        <item name="android:windowFrame">@null</item> <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:backgroundDimEnabled">true</item> <!-- 背景内容模糊 -->
+        <item name="background">@android:color/transparent</item>
+    </style>
+
+    <style name="fragment_dialog_style">
+        <!--设置dialog的背景-->
+        <item name="android:windowBackground">@android:color/transparent
+        </item><!--@android:color/transparent-->
+        <!--设置Dialog的windowFrame框为无-->
+        <item name="android:windowFrame">@null</item>
+        <!--设置无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--设置窗口内容不覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--背景是否模糊显示-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--遮罩层 0就是全透明了-->
+        <!-- <item name="android:backgroundDimAmount">0</item>-->
+    </style>
+
 </resources>
