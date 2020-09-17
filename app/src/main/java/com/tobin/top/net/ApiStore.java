@@ -1,6 +1,7 @@
 package com.tobin.top.net;
 
 import com.tobin.top.bean.RecipesBean;
+import com.tobin.top.bean.RecipesClassBean;
 
 import java.util.List;
 import java.util.Map;
@@ -27,10 +28,13 @@ public interface ApiStore {
 
 //    @POST("/jisuapi/search")
 //    @Headers("Content-Type:application/json")
-//    Flowable<BaseResult<RecipesBean>> getRecipesBean(@Body Map<String, Object> body);
+//    Flowable<BaseResult<RecipesBean>> getRecipesSearch(@Body Map<String, Object> body);
 
-    @GET("/jisuapi/search")
-    Flowable<BaseResult<RecipesBean>> getRecipesBean(@QueryMap Map<String, Object> body);
+    @GET("/jisuapi/search") // 菜谱查询
+    Flowable<BaseResult<RecipesBean>> getRecipesSearch(@QueryMap Map<String, Object> body);
+
+    @GET("/jisuapi/recipe_class") // 菜谱分类
+    Flowable<BaseResult<RecipesClassBean>> getRecipesClass(@QueryMap Map<String, Object> body);
 
     @Streaming
     @GET

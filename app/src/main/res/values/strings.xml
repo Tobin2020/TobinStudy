@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">TobinStudy</string>
+    <string name="app_name">随便看看</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">应用</string>
+    <string name="title_notifications">个人</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

@@ -14,18 +14,18 @@ public class RecipesBean implements Serializable {
     /**
      * status : 0
      * msg : ok
-     * result : {"num":"10","list":[{"id":"8","classid":"2","name":"醋溜白菜","peoplenum":"1-2人","preparetime":"10-20分钟","cookingtime":"10-20分钟","content":"醋溜白菜，是北方人经常吃的一道菜，尤其是在多年前的冬天。那时，没有大棚菜，冬天，家家每天佐餐的基本上都是冬储大白菜，聪明的家庭主妇总是想方设法将这单调的菜变成多种菜式，于是，醋溜白菜被频繁的端上餐桌。  美食不分贵贱，用最平凡的原料、最简单的调料和最普通的手法做出美味的菜肴来才是美食的真谛。   这次，我做的醋溜白菜，近似鲁菜的做法，使个这道菜酸甜浓郁、开胃下饭、老少咸宜。","pic":"http://api.jisuapi.com/recipe/upload/20160719/115138_46688.jpg","tag":"减肥,家常菜,排毒,补钙","material":[{"mname":"油","type":"0","amount":"适量"},{"mname":"盐","type":"0","amount":"适量"},{"mname":"花椒","type":"0","amount":"适量"},{"mname":"干红椒","type":"0","amount":"适量"},{"mname":"葱","type":"0","amount":"适量"},{"mname":"姜","type":"0","amount":"适量"},{"mname":"蒜","type":"0","amount":"适量"},{"mname":"醋","type":"0","amount":"适量"},{"mname":"酱油","type":"0","amount":"适量"},{"mname":"糖","type":"0","amount":"适量"},{"mname":"淀粉","type":"0","amount":"适量"},{"mname":"白菜","type":"1","amount":"380g"}],"process":[{"pcontent":"准备食材。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162550_84583.jpg"},{"pcontent":"将白菜斜刀片成薄片。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_90620.jpg"},{"pcontent":"片切好的白菜帮与菜叶分别入好。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_20925.jpg"},{"pcontent":"盐、糖、生抽、醋淀粉加少许水调匀备用。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_23125.jpg"},{"pcontent":"锅中油烧热，先入花椒炒香后捞出。再加入干红椒段略炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_57046.jpg"},{"pcontent":"加入葱姜蒜煸炒香，然后入白菜帮翻炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_89090.jpg"},{"pcontent":"炒至菜帮变软时，加入白菜叶。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_40445.jpg"},{"pcontent":"快速翻炒至菜软，勾入碗汁","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_92210.jpg"},{"pcontent":"使汤汁均匀的包裹在菜帮上即可","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_29522.jpg"}]}]}
+     * result : {"total":162,"num":1,"list":[{"id":752,"classid":5,"name":"外婆红烧肉","peoplenum":"3-4人","preparetime":"10分钟内","cookingtime":"2小时以上","content":"浓油赤酱、咸淡适中、味道醇厚鲜美、肉质Q弹，一口咬下去，肥而不腻，入口之后，一股香气扑鼻而来，是非常惹味的一道上海本帮菜哦！","pic":"http://api.jisuapi.com/recipe/upload/20160719/115420_37020.jpg","tag":"下酒菜,丰胸,五香,健脾开胃,儿童,增强免疫力,增肥,宴请,家常菜,延缓衰老,沪菜,热菜,焖,白领,私房菜,聚会","material":[{"mname":"料酒","type":0,"amount":"适量"},{"mname":"花雕酒","type":0,"amount":"适量"},{"mname":"冰糖","type":0,"amount":"60g"},{"mname":"老抽","type":0,"amount":"适量"},{"mname":"葱","type":0,"amount":"适量"},{"mname":"姜","type":0,"amount":"适量"},{"mname":"桂皮","type":0,"amount":"适量"},{"mname":"八角","type":0,"amount":"适量"},{"mname":"香叶","type":0,"amount":"适量"},{"mname":"盐","type":0,"amount":"适量"},{"mname":"鹌鹑蛋","type":1,"amount":"15个"},{"mname":"五花肉","type":1,"amount":"500g"}],"process":[{"pcontent":"首先将五花肉切块、葱白切段、姜切片。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_23746.jpg"},{"pcontent":"锅中倒入清水，下入五花肉，淋入适量料酒，加入姜、葱，焯出血水，捞入凉水洗净。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_57458.jpg"},{"pcontent":"锅中放入清水，下入鹌鹑蛋，煮熟捞出，入凉水冷却。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_62404.jpg"},{"pcontent":"锅中准备小半锅油，烧至七成热，下入鹌鹑蛋，炸至颜色金黄捞出。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_72751.jpg"},{"pcontent":"锅中放入五花肉，下入姜、葱，倒入六十克冰糖，加入香叶、八角、桂皮、老抽，少许盐，淋入花雕酒，与五花肉相平为宜，盖上锅盖，大火烧开，转小火煮三个小时，倒入鹌鹑蛋，待汤汁收干，即可出锅享用。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085827_60858.jpg"}]}]}
      */
 
-    private String status;
+    private int status;
     private String msg;
     private ResultBean result;
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -47,18 +47,28 @@ public class RecipesBean implements Serializable {
 
     public static class ResultBean {
         /**
-         * num : 10
-         * list : [{"id":"8","classid":"2","name":"醋溜白菜","peoplenum":"1-2人","preparetime":"10-20分钟","cookingtime":"10-20分钟","content":"醋溜白菜，是北方人经常吃的一道菜，尤其是在多年前的冬天。那时，没有大棚菜，冬天，家家每天佐餐的基本上都是冬储大白菜，聪明的家庭主妇总是想方设法将这单调的菜变成多种菜式，于是，醋溜白菜被频繁的端上餐桌。  美食不分贵贱，用最平凡的原料、最简单的调料和最普通的手法做出美味的菜肴来才是美食的真谛。   这次，我做的醋溜白菜，近似鲁菜的做法，使个这道菜酸甜浓郁、开胃下饭、老少咸宜。","pic":"http://api.jisuapi.com/recipe/upload/20160719/115138_46688.jpg","tag":"减肥,家常菜,排毒,补钙","material":[{"mname":"油","type":"0","amount":"适量"},{"mname":"盐","type":"0","amount":"适量"},{"mname":"花椒","type":"0","amount":"适量"},{"mname":"干红椒","type":"0","amount":"适量"},{"mname":"葱","type":"0","amount":"适量"},{"mname":"姜","type":"0","amount":"适量"},{"mname":"蒜","type":"0","amount":"适量"},{"mname":"醋","type":"0","amount":"适量"},{"mname":"酱油","type":"0","amount":"适量"},{"mname":"糖","type":"0","amount":"适量"},{"mname":"淀粉","type":"0","amount":"适量"},{"mname":"白菜","type":"1","amount":"380g"}],"process":[{"pcontent":"准备食材。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162550_84583.jpg"},{"pcontent":"将白菜斜刀片成薄片。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_90620.jpg"},{"pcontent":"片切好的白菜帮与菜叶分别入好。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_20925.jpg"},{"pcontent":"盐、糖、生抽、醋淀粉加少许水调匀备用。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_23125.jpg"},{"pcontent":"锅中油烧热，先入花椒炒香后捞出。再加入干红椒段略炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_57046.jpg"},{"pcontent":"加入葱姜蒜煸炒香，然后入白菜帮翻炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_89090.jpg"},{"pcontent":"炒至菜帮变软时，加入白菜叶。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_40445.jpg"},{"pcontent":"快速翻炒至菜软，勾入碗汁","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_92210.jpg"},{"pcontent":"使汤汁均匀的包裹在菜帮上即可","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_29522.jpg"}]}]
+         * total : 162
+         * num : 1
+         * list : [{"id":752,"classid":5,"name":"外婆红烧肉","peoplenum":"3-4人","preparetime":"10分钟内","cookingtime":"2小时以上","content":"浓油赤酱、咸淡适中、味道醇厚鲜美、肉质Q弹，一口咬下去，肥而不腻，入口之后，一股香气扑鼻而来，是非常惹味的一道上海本帮菜哦！","pic":"http://api.jisuapi.com/recipe/upload/20160719/115420_37020.jpg","tag":"下酒菜,丰胸,五香,健脾开胃,儿童,增强免疫力,增肥,宴请,家常菜,延缓衰老,沪菜,热菜,焖,白领,私房菜,聚会","material":[{"mname":"料酒","type":0,"amount":"适量"},{"mname":"花雕酒","type":0,"amount":"适量"},{"mname":"冰糖","type":0,"amount":"60g"},{"mname":"老抽","type":0,"amount":"适量"},{"mname":"葱","type":0,"amount":"适量"},{"mname":"姜","type":0,"amount":"适量"},{"mname":"桂皮","type":0,"amount":"适量"},{"mname":"八角","type":0,"amount":"适量"},{"mname":"香叶","type":0,"amount":"适量"},{"mname":"盐","type":0,"amount":"适量"},{"mname":"鹌鹑蛋","type":1,"amount":"15个"},{"mname":"五花肉","type":1,"amount":"500g"}],"process":[{"pcontent":"首先将五花肉切块、葱白切段、姜切片。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_23746.jpg"},{"pcontent":"锅中倒入清水，下入五花肉，淋入适量料酒，加入姜、葱，焯出血水，捞入凉水洗净。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_57458.jpg"},{"pcontent":"锅中放入清水，下入鹌鹑蛋，煮熟捞出，入凉水冷却。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_62404.jpg"},{"pcontent":"锅中准备小半锅油，烧至七成热，下入鹌鹑蛋，炸至颜色金黄捞出。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_72751.jpg"},{"pcontent":"锅中放入五花肉，下入姜、葱，倒入六十克冰糖，加入香叶、八角、桂皮、老抽，少许盐，淋入花雕酒，与五花肉相平为宜，盖上锅盖，大火烧开，转小火煮三个小时，倒入鹌鹑蛋，待汤汁收干，即可出锅享用。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085827_60858.jpg"}]}]
          */
 
-        private String num;
+        private int total;
+        private int num;
         private List<ListBean> list;
 
-        public String getNum() {
+        public int getTotal() {
+            return total;
+        }
+
+        public void setTotal(int total) {
+            this.total = total;
+        }
+
+        public int getNum() {
             return num;
         }
 
-        public void setNum(String num) {
+        public void setNum(int num) {
             this.num = num;
         }
 
@@ -72,21 +82,21 @@ public class RecipesBean implements Serializable {
 
         public static class ListBean {
             /**
-             * id : 8
-             * classid : 2
-             * name : 醋溜白菜
-             * peoplenum : 1-2人
-             * preparetime : 10-20分钟
-             * cookingtime : 10-20分钟
-             * content : 醋溜白菜，是北方人经常吃的一道菜，尤其是在多年前的冬天。那时，没有大棚菜，冬天，家家每天佐餐的基本上都是冬储大白菜，聪明的家庭主妇总是想方设法将这单调的菜变成多种菜式，于是，醋溜白菜被频繁的端上餐桌。  美食不分贵贱，用最平凡的原料、最简单的调料和最普通的手法做出美味的菜肴来才是美食的真谛。   这次，我做的醋溜白菜，近似鲁菜的做法，使个这道菜酸甜浓郁、开胃下饭、老少咸宜。
-             * pic : http://api.jisuapi.com/recipe/upload/20160719/115138_46688.jpg
-             * tag : 减肥,家常菜,排毒,补钙
-             * material : [{"mname":"油","type":"0","amount":"适量"},{"mname":"盐","type":"0","amount":"适量"},{"mname":"花椒","type":"0","amount":"适量"},{"mname":"干红椒","type":"0","amount":"适量"},{"mname":"葱","type":"0","amount":"适量"},{"mname":"姜","type":"0","amount":"适量"},{"mname":"蒜","type":"0","amount":"适量"},{"mname":"醋","type":"0","amount":"适量"},{"mname":"酱油","type":"0","amount":"适量"},{"mname":"糖","type":"0","amount":"适量"},{"mname":"淀粉","type":"0","amount":"适量"},{"mname":"白菜","type":"1","amount":"380g"}]
-             * process : [{"pcontent":"准备食材。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162550_84583.jpg"},{"pcontent":"将白菜斜刀片成薄片。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_90620.jpg"},{"pcontent":"片切好的白菜帮与菜叶分别入好。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162551_20925.jpg"},{"pcontent":"盐、糖、生抽、醋淀粉加少许水调匀备用。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_23125.jpg"},{"pcontent":"锅中油烧热，先入花椒炒香后捞出。再加入干红椒段略炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162552_57046.jpg"},{"pcontent":"加入葱姜蒜煸炒香，然后入白菜帮翻炒。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_89090.jpg"},{"pcontent":"炒至菜帮变软时，加入白菜叶。","pic":"http://api.jisuapi.com/recipe/upload/20160719/162553_40445.jpg"},{"pcontent":"快速翻炒至菜软，勾入碗汁","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_92210.jpg"},{"pcontent":"使汤汁均匀的包裹在菜帮上即可","pic":"http://api.jisuapi.com/recipe/upload/20160719/162554_29522.jpg"}]
+             * id : 752
+             * classid : 5
+             * name : 外婆红烧肉
+             * peoplenum : 3-4人
+             * preparetime : 10分钟内
+             * cookingtime : 2小时以上
+             * content : 浓油赤酱、咸淡适中、味道醇厚鲜美、肉质Q弹，一口咬下去，肥而不腻，入口之后，一股香气扑鼻而来，是非常惹味的一道上海本帮菜哦！
+             * pic : http://api.jisuapi.com/recipe/upload/20160719/115420_37020.jpg
+             * tag : 下酒菜,丰胸,五香,健脾开胃,儿童,增强免疫力,增肥,宴请,家常菜,延缓衰老,沪菜,热菜,焖,白领,私房菜,聚会
+             * material : [{"mname":"料酒","type":0,"amount":"适量"},{"mname":"花雕酒","type":0,"amount":"适量"},{"mname":"冰糖","type":0,"amount":"60g"},{"mname":"老抽","type":0,"amount":"适量"},{"mname":"葱","type":0,"amount":"适量"},{"mname":"姜","type":0,"amount":"适量"},{"mname":"桂皮","type":0,"amount":"适量"},{"mname":"八角","type":0,"amount":"适量"},{"mname":"香叶","type":0,"amount":"适量"},{"mname":"盐","type":0,"amount":"适量"},{"mname":"鹌鹑蛋","type":1,"amount":"15个"},{"mname":"五花肉","type":1,"amount":"500g"}]
+             * process : [{"pcontent":"首先将五花肉切块、葱白切段、姜切片。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_23746.jpg"},{"pcontent":"锅中倒入清水，下入五花肉，淋入适量料酒，加入姜、葱，焯出血水，捞入凉水洗净。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_57458.jpg"},{"pcontent":"锅中放入清水，下入鹌鹑蛋，煮熟捞出，入凉水冷却。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_62404.jpg"},{"pcontent":"锅中准备小半锅油，烧至七成热，下入鹌鹑蛋，炸至颜色金黄捞出。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085826_72751.jpg"},{"pcontent":"锅中放入五花肉，下入姜、葱，倒入六十克冰糖，加入香叶、八角、桂皮、老抽，少许盐，淋入花雕酒，与五花肉相平为宜，盖上锅盖，大火烧开，转小火煮三个小时，倒入鹌鹑蛋，待汤汁收干，即可出锅享用。","pic":"http://api.jisuapi.com/recipe/upload/20160720/085827_60858.jpg"}]
              */
 
-            private String id;
-            private String classid;
+            private int id;
+            private int classid;
             private String name;
             private String peoplenum;
             private String preparetime;
@@ -97,19 +107,19 @@ public class RecipesBean implements Serializable {
             private List<MaterialBean> material;
             private List<ProcessBean> process;
 
-            public String getId() {
+            public int getId() {
                 return id;
             }
 
-            public void setId(String id) {
+            public void setId(int id) {
                 this.id = id;
             }
 
-            public String getClassid() {
+            public int getClassid() {
                 return classid;
             }
 
-            public void setClassid(String classid) {
+            public void setClassid(int classid) {
                 this.classid = classid;
             }
 
@@ -187,13 +197,13 @@ public class RecipesBean implements Serializable {
 
             public static class MaterialBean {
                 /**
-                 * mname : 油
+                 * mname : 料酒
                  * type : 0
                  * amount : 适量
                  */
 
                 private String mname;
-                private String type;
+                private int type;
                 private String amount;
 
                 public String getMname() {
@@ -204,11 +214,11 @@ public class RecipesBean implements Serializable {
                     this.mname = mname;
                 }
 
-                public String getType() {
+                public int getType() {
                     return type;
                 }
 
-                public void setType(String type) {
+                public void setType(int type) {
                     this.type = type;
                 }
 
@@ -223,8 +233,8 @@ public class RecipesBean implements Serializable {
 
             public static class ProcessBean {
                 /**
-                 * pcontent : 准备食材。
-                 * pic : http://api.jisuapi.com/recipe/upload/20160719/162550_84583.jpg
+                 * pcontent : 首先将五花肉切块、葱白切段、姜切片。
+                 * pic : http://api.jisuapi.com/recipe/upload/20160720/085826_23746.jpg
                  */
 
                 private String pcontent;
@@ -247,14 +257,5 @@ public class RecipesBean implements Serializable {
                 }
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "RecipesBean{" +
-                "status='" + status + '\'' +
-                ", msg='" + msg + '\'' +
-                ", result=" + result +
-                '}';
     }
 }
