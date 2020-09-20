@@ -3,20 +3,40 @@ package com.tobin.top.ui;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.gyf.immersionbar.ImmersionBar;
 import com.tobin.top.R;
 import com.tobin.top.base.BaseActivity;
 import com.tobin.top.lifecycle.BaseViewModel;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends BaseActivity {
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    protected void initImmersionBar() {
+        ImmersionBar.with(this).titleBar(R.id.tool_bar).statusBarDarkFont(true).init();
+    }
+
+    @Override
+    protected int onCreate() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+        toolbar = findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);  //加载Toolbar控件
+
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setItemTextAppearanceInactive(0);
@@ -27,32 +47,8 @@ public class MainActivity extends BaseActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         // 没有actionbar
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
-
-    }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = item -> {
-    //            resetToDefaultIcon();//重置到默认不选中图片
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        //在这里替换图标
-    //                    item.setIcon(R.mipmap.ic_home_selected);
-                        return true;
-
-                }
-                return false;
-            };
-
-    @Override
-    protected int onCreate() {
-        return R.layout.activity_main;
-    }
-
-    @Override
-    protected void initView() {
-
     }
 
     @Override

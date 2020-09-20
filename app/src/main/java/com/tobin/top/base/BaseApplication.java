@@ -8,6 +8,7 @@ import android.net.NetworkRequest;
 
 import com.tobin.top.utils.LogUtil;
 
+import androidx.annotation.NonNull;
 import io.reactivex.plugins.RxJavaPlugins;
 
 /**
@@ -18,7 +19,6 @@ import io.reactivex.plugins.RxJavaPlugins;
  */
 public class BaseApplication extends Application {
     private static BaseApplication instance;
-    public static boolean isDownAd;
 
     public static BaseApplication getInstance() {
         return instance;
@@ -29,22 +29,22 @@ public class BaseApplication extends Application {
         super.onCreate();
         instance = this;
         RxJavaPlugins.setErrorHandler(throwable -> {
-            LogUtil.d("BootApplication RxJavaPlugins throwable: " + throwable.getMessage());
+            LogUtil.d("BaseApplication RxJavaPlugins throwable: " + throwable.getMessage());
         });
+
+        initNetworkMonitor();
     }
 
     private void initNetworkMonitor(){
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         connectivityManager.requestNetwork(new NetworkRequest.Builder().build(), new ConnectivityManager.NetworkCallback() {
             @Override
-            public void onAvailable(Network network) {
+            public void onAvailable(@NonNull Network network) {
                 super.onAvailable(network);
 
             }
         });
     }
-
-
 
     @Override
     protected void attachBaseContext(Context base) {

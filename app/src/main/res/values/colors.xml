@@ -3,7 +3,7 @@
     <color name="colorPrimary">@android:color/holo_blue_dark</color>
     <color name="colorPrimaryDark">@android:color/holo_blue_dark</color>
     <color name="colorAccent">@android:color/holo_blue_dark</color>
-
+    <color name="colorWhite">@android:color/white</color>
     <color name="colorBottomNavigationView">#FFEDEDED</color>
     <color name="xm">#00AFFF</color>
 </resources>

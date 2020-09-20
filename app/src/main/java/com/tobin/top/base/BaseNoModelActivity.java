@@ -2,6 +2,7 @@ package com.tobin.top.base;
 
 import android.content.Context;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.tobin.top.common.ActivityCollector;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,23 @@ public abstract class BaseNoModelActivity extends AppCompatActivity {
 
         initView();
         initData();
+
+        initImmersionBar();
+    }
+
+    /**
+     * 初始化沉浸式
+     * Init immersion bar.
+     */
+    protected void initImmersionBar() {
+        ImmersionBar.with(this)
+//                .titleBar(this)    //解决状态栏和布局重叠问题
+//                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+//                .navigationBarDarkIcon(true) //导航栏图标是深色，不写默认为亮色
+//                .autoDarkModeEnable(true) //自动状态栏字体和导航栏图标变色，必须指定状态栏颜色和导航栏颜色才可以自动变色哦
+//                .autoStatusBarDarkModeEnable(true,0.2f) //自动状态栏字体变色，必须指定状态栏颜色才可以自动变色哦
+//                .autoNavigationBarDarkModeEnable(true,0.2f) //自动导航栏图标变色，必须指定导航栏颜色才可以自动变色哦
+                .init();
     }
 
     /**

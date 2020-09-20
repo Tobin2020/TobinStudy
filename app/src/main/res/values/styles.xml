@@ -1,14 +1,15 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+<!--        <item name="windowNoTitle">true</item>-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
         <!--Toolbar颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- 状态栏颜色 -->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 
     <style name="dialog_fullscreen" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
@@ -38,11 +39,6 @@
         <item name="android:backgroundDimEnabled">true</item>
         <!--遮罩层 0就是全透明了-->
         <!-- <item name="android:backgroundDimAmount">0</item>-->
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>
