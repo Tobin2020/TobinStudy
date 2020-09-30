@@ -1,2 +1,3 @@
+include ':kotlinapp'
 include ':app'
 rootProject.name = "TobinStudy"

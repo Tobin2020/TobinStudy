@@ -30,12 +30,13 @@ public class DashboardFragment extends BaseLazyFragment<DashboardViewModel>{
     protected void initView(View view) {
         LogUtil.d("DashboardFragment initView");
         recyclerView = view.findViewById(R.id.rcv_dashboard);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new RecycleViewDivider(
                 getContext(), LinearLayoutManager.HORIZONTAL, 12, getResources().getColor(R.color.colorWhite)));
-        adapter = new DashboardAdapter(funcList);
+        adapter = new DashboardAdapter();
         adapter.setOnItemClickListener(itemClickListener);
+        recyclerView.setAdapter(adapter);
     }
 
     private  OnItemClickListener itemClickListener = (rv, view, position, data) -> {
@@ -63,7 +64,7 @@ public class DashboardFragment extends BaseLazyFragment<DashboardViewModel>{
         funcList.add(banana);
         DashboardBean orange = new DashboardBean("新闻", R.mipmap.news);
         funcList.add(orange);
-        recyclerView.setAdapter(adapter);
+        adapter.setData(funcList);
     }
 
     @Override
