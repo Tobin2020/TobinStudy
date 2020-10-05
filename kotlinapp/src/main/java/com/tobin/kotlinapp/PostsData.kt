@@ -178,6 +178,6 @@ val post1 = Post(
     ),
     paragraphs = paragraphsPost1,
     imageId = R.mipmap.ic_launcher,
-    imageThumbId = R.mipmap.ic_launcher_round
+    imageThumbId = R.mipmap.setting
 )
 

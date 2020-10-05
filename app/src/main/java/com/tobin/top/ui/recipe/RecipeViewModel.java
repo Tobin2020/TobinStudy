@@ -36,7 +36,7 @@ public class RecipeViewModel extends BaseViewModel {
     }
 
     public void loadRecipes() {
-        Disposable disposable = ApiManager.getRecipesSearch("红烧肉")
+        Disposable disposable = ApiManager.recipesSearch("红烧肉")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribe(baseResult -> {
@@ -50,7 +50,7 @@ public class RecipeViewModel extends BaseViewModel {
     }
 
     public void loadRecipesClass() {
-        Disposable disposable = ApiManager.getRecipesClass()
+        Disposable disposable = ApiManager.recipesClass()
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribe(baseResult -> {

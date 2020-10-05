@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment;
  * @author lijunbin
  * @date 2020/8/21
  * @email 616041023@qq.com
- * @description BaseDialogFragment
+ * @description DialogFragment基类
  */
 public class BaseDialogFragment extends DialogFragment {
 

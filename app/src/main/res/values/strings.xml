@@ -6,4 +6,8 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
+
+    <string name="clear_history">清除历史记录</string>
+    <string name="enter_content">请输入内容</string>
+
 </resources>

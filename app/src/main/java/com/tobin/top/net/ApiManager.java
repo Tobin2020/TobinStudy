@@ -10,20 +10,37 @@ import io.reactivex.Flowable;
 
 public class ApiManager {
 
-    public static Flowable<BaseResult<RecipesBean>> getRecipesSearch(String keyword) {
+    public static Flowable<BaseResult<RecipesBean>> recipesSearch(String keyword) {
 
         Map<String, Object> bodyMaps = new HashMap<>();
         bodyMaps.put("appkey",ApiStore.appKey);
-        bodyMaps.put("keyword",keyword);
-        bodyMaps.put("num",1);
+        bodyMaps.put("keyword",keyword);  // 关键词
+        bodyMaps.put("num",20);  // 获取数量，最大值为20
 
-        return Api.getInstance().getRecipesSearch(bodyMaps);
+        return Api.getInstance().recipesSearch(bodyMaps);
     }
 
-    public static Flowable<BaseResult<RecipesClassBean>> getRecipesClass() {
+    public static Flowable<BaseResult<RecipesClassBean>> recipesClass() {
         Map<String, Object> bodyMaps = new HashMap<>();
         bodyMaps.put("appkey",ApiStore.appKey);
-        return Api.getInstance().getRecipesClass(bodyMaps);
+        return Api.getInstance().recipesClass(bodyMaps);
     }
+
+    public static Flowable<BaseResult<RecipesClassBean>> byRecipesClass(int classId, int start, int num) {
+        Map<String, Object> bodyMaps = new HashMap<>();
+        bodyMaps.put("appkey",ApiStore.appKey);
+        bodyMaps.put("classid",2);  // 分类ID
+        bodyMaps.put("start",0);  // 起始条数
+        bodyMaps.put("num",10);  // 获取数量，最大为20
+        return Api.getInstance().byRecipesClass(bodyMaps);
+    }
+
+    public static Flowable<BaseResult<RecipesClassBean>> recipesDetail(int id) {
+        Map<String, Object> bodyMaps = new HashMap<>();
+        bodyMaps.put("appkey",ApiStore.appKey);
+        bodyMaps.put("id",2);  // 菜谱ID
+        return Api.getInstance().recipesDetail(bodyMaps);
+    }
+
 
 }
