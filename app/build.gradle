@@ -14,10 +14,26 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        tobin {
+            keyAlias "tobin"
+            keyPassword "..!@tobin"
+            storePassword "..!@tobin"
+            storeFile rootProject.file("tobinStudy.jks")
+        }
+    }
+
     buildTypes {
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.tobin
+        }
+
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.tobin
         }
     }
 

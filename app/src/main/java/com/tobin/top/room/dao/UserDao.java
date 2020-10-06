@@ -22,23 +22,23 @@ public interface UserDao {
     void insertAll(UserBean... entity);
 
     @Query("SELECT * FROM UserBean WHERE userId = 1")
-    UserBean getAdOne();
+    UserBean getUserOne();
 
     @Update
     void update(UserBean entity);
 
     @Query("SELECT * FROM UserBean ")
-    List<UserBean> getAdInfo();
+    List<UserBean> getUserInfo();
 
     @Query("SELECT * FROM UserBean WHERE userId = 1")
-    Single<UserBean> getAdOneByRxJava();
+    Single<UserBean> getUserOneByRxJava();
 
     @Query("SELECT * FROM UserBean WHERE userId = 1")
-    LiveData<UserBean> getAdByLiveData();
+    LiveData<UserBean> getUserByLiveData();
 
     @Query("SELECT * FROM UserBean WHERE userId = :userId")
-    Flowable<UserBean> getAgreeByRxJava(String userId);
+    Flowable<UserBean> getUserByRxJava(String userId);
 
     @Query("UPDATE UserBean SET userId = :userId WHERE userName = :userName")
-    public abstract int setAdType(String userId, String userName);
+    public abstract int updateUser(String userId, String userName);
 }

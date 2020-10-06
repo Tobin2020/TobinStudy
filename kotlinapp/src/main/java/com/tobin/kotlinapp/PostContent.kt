@@ -64,12 +64,12 @@ import androidx.ui.tooling.preview.Preview
 private val defaultSpacerSize = 16.dp
 
 @Composable
-fun PostContent(post: Post, modifier: Modifier = Modifier) {
+fun postContent(post: Post, modifier: Modifier = Modifier) {
     ScrollableColumn(
         modifier = modifier.padding(horizontal = defaultSpacerSize)
     ) {
         Spacer(Modifier.preferredHeight(defaultSpacerSize))
-        PostHeaderImage(post)
+        postHeaderImage(post)
         Text(text = post.title, style = MaterialTheme.typography.h4)
         Spacer(Modifier.preferredHeight(8.dp))
         post.subtitle?.let { subtitle ->
@@ -82,7 +82,7 @@ fun PostContent(post: Post, modifier: Modifier = Modifier) {
             }
             Spacer(Modifier.preferredHeight(defaultSpacerSize))
         }
-        PostMetadata(post.metadata)
+        postMetadata(post.metadata)
         Spacer(Modifier.preferredHeight(24.dp))
         PostContents(post.paragraphs)
         Spacer(Modifier.preferredHeight(48.dp))
@@ -90,7 +90,7 @@ fun PostContent(post: Post, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun PostHeaderImage(post: Post) {
+private fun postHeaderImage(post: Post) {
     post.image?.let { image ->
         val imageModifier = Modifier
             .heightIn(min = 180.dp)
@@ -102,7 +102,7 @@ private fun PostHeaderImage(post: Post) {
 }
 
 @Composable
-private fun PostMetadata(metadata: Metadata) {
+private fun postMetadata(metadata: Metadata) {
     val typography = MaterialTheme.typography
     Row {
         Image(
@@ -323,7 +323,7 @@ private val Colors.codeBlockBackground: Color
 @Composable
 fun PreviewPost() {
     ThemedPreview {
-        PostContent(post = post1)
+        postContent(post = post1)
     }
 }
 

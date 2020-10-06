@@ -8,8 +8,7 @@ import androidx.room.PrimaryKey;
 /**
  * @author lijunbin
  * @date 2020/9/16
- * @email
- * @description TobinStudy
+ * @description UserBean
  */
 @Entity
 public class UserBean implements Serializable {

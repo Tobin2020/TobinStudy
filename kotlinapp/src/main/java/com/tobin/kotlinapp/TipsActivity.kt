@@ -16,7 +16,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.tobin.kotlinapp.*
 
 /**
  * @author lijunbin
@@ -103,7 +102,7 @@ fun ArticleScreen(
         },
         bodyContent = { innerPadding ->
             val modifier = Modifier.padding(innerPadding)
-            PostContent(post1, modifier)
+            postContent(post1, modifier)
         },
 
     )
