@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tobin.top.R;
 import com.tobin.top.base.BaseLazyFragment;
 import com.tobin.top.ui.OnItemClickListener;
-import com.tobin.top.ui.recipe.RecipeActivity;
+import com.tobin.top.ui.recipe.RecipeClassActivity;
 import com.tobin.top.utils.LogUtil;
 import com.tobin.top.widgets.RecycleViewDivider;
 
@@ -41,7 +41,7 @@ public class DashboardFragment extends BaseLazyFragment<DashboardViewModel>{
 
     private  OnItemClickListener itemClickListener = (rv, view, position, data) -> {
         if (view.getId() == R.id.card_view_dashboard_item && position == 0){
-            Intent intent = new Intent(getActivity(), RecipeActivity.class);
+            Intent intent = new Intent(getActivity(), RecipeClassActivity.class);
             requireActivity().startActivity(intent);
         }
     };

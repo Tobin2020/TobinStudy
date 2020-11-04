@@ -1,7 +1,7 @@
 package com.tobin.top.net;
 
-import com.tobin.top.bean.RecipesBean;
-import com.tobin.top.bean.RecipesClassBean;
+import com.tobin.top.ui.recipe.RecipesBean;
+import com.tobin.top.ui.recipe.RecipesClassBean;
 
 import java.util.Map;
 
@@ -31,7 +31,7 @@ public interface ApiStore {
     Flowable<BaseResult<RecipesClassBean>> recipesClass(@QueryMap Map<String, Object> body);
 
     @GET("/jisuapi/byclass") // 按分类检索
-    Flowable<BaseResult<RecipesClassBean>> byRecipesClass(@QueryMap Map<String, Object> body);
+    Flowable<BaseResult<RecipesBean>> byRecipesClass(@QueryMap Map<String, Object> body);
 
     @GET("/jisuapi/detail") // 根据ID查询详情
     Flowable<BaseResult<RecipesClassBean>> recipesDetail(@QueryMap Map<String, Object> body);
@@ -42,24 +42,9 @@ public interface ApiStore {
     Observable<ResponseBody> startDownLoad(@Url String fileUrl);
 
 
-    @POST("/api/app")
-    Flowable<BaseResult<String>> carInputData(@HeaderMap Map<String, Object> headers,
-                                              @Body Map<String, Object> body);
-
-    @POST
-    Flowable<String> mPostRequestString(@Url String url, @HeaderMap Map<String, Object> headers,
-                                        @Body Map<String, Object> body);
-
-    @GET
-    Flowable<String> mGetRequestString(@Url String url, @HeaderMap Map<String, Object> headers,
-                                       @Body Map<String, Object> body);
-
     @POST
     Flowable<BaseResult<Object>> mPostRequest(@Url String url, @HeaderMap Map<String, Object> headers,
                                               @Body Map<String, Object> body);
 
-    @GET
-    Flowable<BaseResult<Object>> mGetRequest(@Url String url, @HeaderMap Map<String, Object> headers,
-                                             @Body Map<String, Object> body);
 
 }

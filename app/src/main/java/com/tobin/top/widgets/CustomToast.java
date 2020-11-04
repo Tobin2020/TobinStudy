@@ -82,8 +82,7 @@ public class CustomToast {
 //        }
         mToast = instance(context, showAnim);
 
-        @SuppressLint("InflateParams")
-        View layout = LayoutInflater.from(context).inflate(R.layout.toast_custom_layout, null, false);
+        View layout = LayoutInflater.from(context.getApplicationContext()).inflate(R.layout.toast_custom_layout, null, false);
 
         ImageView icon = layout.findViewById(R.id.toastIcon);
         TextView text = layout.findViewById(R.id.toastMessage);

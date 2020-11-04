@@ -1,4 +1,4 @@
-package com.tobin.top.bean;
+package com.tobin.top.ui.recipe;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.List;
  * @author lijunbin
  * @date 2020/9/16
  * @email
- * @description TobinStudy
+ * @description 菜谱搜索结果
  */
 public class RecipesBean implements Serializable {
 
@@ -229,6 +229,16 @@ public class RecipesBean implements Serializable {
                 public void setAmount(String amount) {
                     this.amount = amount;
                 }
+
+                @Override
+                public String toString() {
+                    return "MaterialBean{" +
+                            "mname='" + mname + '\'' +
+                            ", type=" + type +
+                            ", amount='" + amount + '\'' +
+                            '}';
+                }
+
             }
 
             public static class ProcessBean {
@@ -255,7 +265,50 @@ public class RecipesBean implements Serializable {
                 public void setPic(String pic) {
                     this.pic = pic;
                 }
+
+                @Override
+                public String toString() {
+                    return "ProcessBean{" +
+                            "pcontent='" + pcontent + '\'' +
+                            ", pic='" + pic + '\'' +
+                            '}';
+                }
+            }
+
+            @Override
+            public String toString() {
+                return "ListBean{" +
+                        "id=" + id +
+                        ", classid=" + classid +
+                        ", name='" + name + '\'' +
+                        ", peoplenum='" + peoplenum + '\'' +
+                        ", preparetime='" + preparetime + '\'' +
+                        ", cookingtime='" + cookingtime + '\'' +
+                        ", content='" + content + '\'' +
+                        ", pic='" + pic + '\'' +
+                        ", tag='" + tag + '\'' +
+                        ", material=" + material +
+                        ", process=" + process +
+                        '}';
             }
         }
+
+        @Override
+        public String toString() {
+            return "ResultBean{" +
+                    "total=" + total +
+                    ", num=" + num +
+                    ", list=" + list +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "RecipesBean{" +
+                "status=" + status +
+                ", msg='" + msg + '\'' +
+                ", result=" + result +
+                '}';
     }
 }

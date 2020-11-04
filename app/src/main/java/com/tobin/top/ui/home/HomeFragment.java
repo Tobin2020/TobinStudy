@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.tobin.top.R;
 import com.tobin.top.base.BaseLazyFragment;
-import com.tobin.top.ui.window.WindowUtils;
 
 public class HomeFragment extends BaseLazyFragment<HomeViewModel> implements View.OnClickListener {
     TextView textView;
@@ -24,9 +23,9 @@ public class HomeFragment extends BaseLazyFragment<HomeViewModel> implements Vie
 
         textView = view.findViewById(R.id.text_home);
 
-        Button button = view.findViewById(R.id.window_pop);
-        button.setOnClickListener(view1 -> {
-            WindowUtils.showPopupWindow(activity);
+        Button test = view.findViewById(R.id.bt_test);
+        test.setOnClickListener(v -> {
+
 
         });
     }

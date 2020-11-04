@@ -1,8 +1,13 @@
-package com.tobin.top.bean;
+package com.tobin.top.ui.recipe;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class RecipesClassBean {
+/**
+ * 菜谱分类 按分类检索 根据ID查询详情
+ */
+
+public class RecipesClassBean implements Serializable {
 
     /**
      * status : 0
@@ -38,7 +43,7 @@ public class RecipesClassBean {
         this.result = result;
     }
 
-    public static class ResultBean {
+    public static class ResultBean implements Serializable  {
         /**
          * classid : 1
          * name : 功效
@@ -83,7 +88,7 @@ public class RecipesClassBean {
             this.list = list;
         }
 
-        public static class ListBean {
+        public static class ListBean implements Serializable {
             /**
              * classid : 2
              * name : 减肥

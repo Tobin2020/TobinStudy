@@ -1,12 +1,11 @@
 package com.tobin.top.ui.recipe;
 
-import com.tobin.top.bean.RecipesBean;
-import com.tobin.top.bean.RecipesClassBean;
+import androidx.lifecycle.MutableLiveData;
+
 import com.tobin.top.lifecycle.BaseViewModel;
 import com.tobin.top.net.ApiManager;
 import com.tobin.top.utils.LogUtil;
 
-import androidx.lifecycle.MutableLiveData;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
@@ -18,25 +17,17 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class RecipeViewModel extends BaseViewModel {
     private MutableLiveData<RecipesBean> recipesLiveData;
-    private MutableLiveData<RecipesClassBean> recipesClassLiveData;
 
     public RecipeViewModel() {
         recipesLiveData = new MutableLiveData<>();
-        recipesClassLiveData = new MutableLiveData<>();
     }
 
     public MutableLiveData<RecipesBean> getRecipesLiveData() {
-        loadRecipes();
         return recipesLiveData;
     }
 
-    public MutableLiveData<RecipesClassBean> getRecipesClassLiveData() {
-        loadRecipesClass();
-        return recipesClassLiveData;
-    }
-
-    public void loadRecipes() {
-        Disposable disposable = ApiManager.recipesSearch("红烧肉")
+    public void byRecipesClass(int classId, int start, int num) {
+        Disposable disposable = ApiManager.byRecipesClass(classId, start, num)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .subscribe(baseResult -> {
@@ -44,20 +35,6 @@ public class RecipeViewModel extends BaseViewModel {
                     recipesLiveData.postValue(baseResult.getResult());
                 }, throwable -> {
                     LogUtil.e("HomeViewModel loadRecipes throwable: " + throwable.getMessage());
-                    error.postValue(throwable.getMessage());
-                });
-        addDisposable(disposable);
-    }
-
-    public void loadRecipesClass() {
-        Disposable disposable = ApiManager.recipesClass()
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .subscribe(baseResult -> {
-                    LogUtil.d("HomeViewModel loadRecipesClass baseResult: " + baseResult.toString());
-                    recipesClassLiveData.postValue(baseResult.getResult());
-                }, throwable -> {
-                    LogUtil.e("HomeViewModel loadRecipesClass throwable: " + throwable.getMessage());
                     error.postValue(throwable.getMessage());
                 });
         addDisposable(disposable);

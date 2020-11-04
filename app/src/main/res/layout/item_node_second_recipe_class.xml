@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/tv_recipe_class"
+        android:id="@+id/tv_second_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
