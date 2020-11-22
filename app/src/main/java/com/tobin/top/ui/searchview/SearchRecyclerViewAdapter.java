@@ -26,15 +26,6 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
         this.list = list;
     }
 
-//    @Override
-//    protected void convert(BaseViewHolder helper, String item) {
-//        helper.setText(R.id.tv_history_item, item);
-//        helper.setTextColor(R.id.tv_history_item, historyTextColor);
-//        ImageView iconImageView = helper.getView(R.id.left_icon);
-//        iconImageView.setImageResource(historyIcon);
-//    }
-
-
     @NonNull
     @Override
     public SearchViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

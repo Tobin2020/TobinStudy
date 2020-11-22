@@ -28,11 +28,8 @@ final class SearchViewUtils {
     static void open(final Context context, final CardView search, final EditText editText) {
         if (search.getVisibility() == View.INVISIBLE || search.getVisibility() == View.GONE)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                Animator animator = ViewAnimationUtils.createCircularReveal(search,
-                        search.getWidth() - dip2px(context, 25),
-                        dip2px(context, 25),
-                        0,
-                        (float) Math.hypot(search.getWidth(), search.getHeight()));
+                Animator animator = ViewAnimationUtils.createCircularReveal(search, search.getWidth() - dip2px(context, 25),
+                        dip2px(context, 25), 0, (float) Math.hypot(search.getWidth(), search.getHeight()));
                 animator.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -70,11 +67,9 @@ final class SearchViewUtils {
         if (search.getVisibility() == View.VISIBLE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Animator animatorHide = ViewAnimationUtils.createCircularReveal(search,
-                        search.getWidth() - dip2px(context, 25),
-                        dip2px(context, 25),
+                        search.getWidth() - dip2px(context, 25), dip2px(context, 25),
                         //确定元的半径（算长宽的斜边长，这样半径不会太短也不会很长效果比较舒服）
-                        (float) Math.hypot(search.getWidth(), search.getHeight()),
-                        0);
+                        (float) Math.hypot(search.getWidth(), search.getHeight()), 0);
                 animatorHide.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
