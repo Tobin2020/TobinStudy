@@ -14,7 +14,7 @@ import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.ViewHolder> implements View.OnClickListener {
+public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.ViewHolder>{
     private OnItemClickListener onItemClickListener;
     private List<DashboardBean> mFuncList;
     private RecyclerView recyclerView;
@@ -43,21 +43,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
         this.onItemClickListener = onItemClickListener;
     }
 
-    @Override
-    public void onClick(View view) {
-        if (onItemClickListener == null || recyclerView == null) {
-            LogUtil.d("DashboardAdapter onItemClickListener or recyclerView is null");
-            return;
-        }
-        int position = recyclerView.getChildAdapterPosition(view);
-        onItemClickListener.onItemClick(recyclerView,view,position,mFuncList.get(position));
-    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dashboard, parent, false);
         ViewHolder holder = new ViewHolder(view);
-        view.setOnClickListener(this);
+        view.setOnClickListener(v -> {
+            onItemClickListener.onItemClick(view,holder.getLayoutPosition(),mFuncList.get(holder.getLayoutPosition()));
+        });
         return holder;
     }
 
@@ -65,9 +58,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         DashboardBean fruit = mFuncList.get(position);
         holder.funcImage.setImageResource(fruit.getImageId());
-        holder.funcImage.setOnClickListener(this);
         holder.funcName.setText(fruit.getName());
-        holder.funcName.setOnClickListener(this);
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.tobin.top.R;
 import com.tobin.top.base.BaseLazyFragment;
 import com.tobin.top.ui.OnItemClickListener;
 import com.tobin.top.ui.recipe.RecipeClassActivity;
+import com.tobin.top.ui.weather.WeatherActivity;
 import com.tobin.top.utils.LogUtil;
 import com.tobin.top.widgets.RecycleViewDivider;
 
@@ -39,10 +40,13 @@ public class DashboardFragment extends BaseLazyFragment<DashboardViewModel>{
         recyclerView.setAdapter(adapter);
     }
 
-    private  OnItemClickListener itemClickListener = (rv, view, position, data) -> {
+    private  OnItemClickListener itemClickListener = (view, position, data) -> {
         if (view.getId() == R.id.card_view_dashboard_item && position == 0){
             Intent intent = new Intent(getActivity(), RecipeClassActivity.class);
-            requireActivity().startActivity(intent);
+            activity.startActivity(intent);
+        }else if (view.getId() == R.id.card_view_dashboard_item && position == 1){
+            Intent intent = new Intent(getActivity(), WeatherActivity.class);
+            activity.startActivity(intent);
         }
     };
 

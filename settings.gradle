@@ -1,3 +1,4 @@
 include ':kotlinapp'
 include ':app'
+include ':wechatdemo'
 rootProject.name = "TobinStudy"

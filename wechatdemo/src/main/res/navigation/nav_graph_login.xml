@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.wechatdemo.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_phoneLoginCheckFragment"
+            app:destination="@id/phoneLoginCheckFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/phoneLoginCheckFragment"
+        android:name="com.wechatdemo.login.PhoneLoginCheckFragment"
+        android:label="phone_login_fragment"
+        tools:layout="@layout/phone_login_check_fragment" >
+        <action
+            android:id="@+id/action_phoneLoginCheckFragment_to_thirdLoginFragment"
+            app:destination="@id/thirdLoginFragment" />
+        <action
+            android:id="@+id/action_phoneLoginCheckFragment_to_phoneLoginFragment"
+            app:destination="@id/phoneLoginFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/thirdLoginFragment"
+        android:name="com.wechatdemo.login.ThirdLoginFragment"
+        android:label="third_login_fragment"
+        tools:layout="@layout/third_login_fragment" >
+        <action
+            android:id="@+id/action_thirdLoginFragment_to_phoneLoginCheckFragment"
+            app:destination="@id/phoneLoginCheckFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/phoneLoginFragment"
+        android:name="com.wechatdemo.login.PhoneLoginFragment"
+        android:label="phone_login_fragment"
+        tools:layout="@layout/phone_login_fragment" >
+        <action
+            android:id="@+id/action_phoneLoginFragment_to_phoneSecureFragment"
+            app:destination="@id/phoneSecureFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/phoneSecureFragment"
+        android:name="com.wechatdemo.login.PhoneSecureFragment"
+        android:label="PhoneSecureFragment"
+        tools:layout="@layout/phone_secure_fragment" />
+
+</navigation>
