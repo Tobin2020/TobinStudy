@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="top.tobin.amap">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application>
+        <activity android:name=".weather.WeatherActivity" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="6858086834f7c6d9822bab569efa5b8a" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+    </application>
+
+
+</manifest>

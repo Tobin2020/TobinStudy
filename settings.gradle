@@ -1,3 +1,6 @@
+include ':webview'
+include ':amap'
+include ':basicLib'
 include ':kotlinapp'
 include ':app'
 include ':wechatdemo'

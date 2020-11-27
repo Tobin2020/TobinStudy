@@ -1,0 +1,24 @@
+@startuml
+
+:Fragment is added;
+:onAttach();
+:onCreate();
+
+repeat
+:onCreateView();
+:onActivityCreated();
+:onStart();
+:onResume();
+:Fragment is active();
+
+-[#green,dashed]-> The fragment is \n added to the back \n stack, then \n removed/replaced;
+:onPause();
+:onStop();
+
+repeat while(onDestroyView()) -[#green,dashed]-> The fragment is \n returns to the \n layout from the \n back stack
+
+:onDestroy();
+:onDetach();
+:Fragment is destroyed;
+
+@enduml

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Web_Activity_Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="background">@android:color/transparent</item>
+        <!-- 状态栏颜色 -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

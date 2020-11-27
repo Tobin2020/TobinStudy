@@ -11,8 +11,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/amap" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/basicLib" />
             <option value="$PROJECT_DIR$/kotlinapp" />
+            <option value="$PROJECT_DIR$/webview" />
+            <option value="$PROJECT_DIR$/wechatdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
