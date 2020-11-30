@@ -64,6 +64,7 @@ dependencies {
     implementation project(path: ':basicLib')
     implementation project(path: ':amap')
     implementation project(path: ':webview')
+    implementation project(path: ':recipe')
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -104,6 +105,4 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
 
-    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 }

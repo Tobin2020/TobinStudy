@@ -22,8 +22,8 @@ import android.webkit.WebViewClient;
 import androidx.annotation.RequiresApi;
 
 import top.tobin.webview.R;
+import top.tobin.webview.remotewebview.BaseWebView;
 import top.tobin.webview.remotewebview.callback.WebViewCallBack;
-import static top.tobin.webview.remotewebview.BaseWebView.CONTENT_SCHEME;
 
 public class CustomWebViewClient extends WebViewClient {
 
@@ -123,7 +123,7 @@ public class CustomWebViewClient extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         Log.e(TAG, "onPageFinished url:" + url);
-        if (!TextUtils.isEmpty(url) && url.startsWith(CONTENT_SCHEME)) {
+        if (!TextUtils.isEmpty(url) && url.startsWith(BaseWebView.CONTENT_SCHEME)) {
             isReady = true;
         }
         if (webViewCallBack != null) {

@@ -12,8 +12,9 @@
         <activity android:name="top.tobin.webview.WebActivity"
             android:theme="@style/Web_Activity_Theme" />
 
-        <service android:name=".mainprocess.MainProHandleRemoteService"/>
-        <service android:name=".remoteprocessservice.OptimizationService"
+        <service android:name="top.tobin.webview.mainprocess.MainProHandleRemoteService"/>
+
+        <service android:name="top.tobin.webview.remoteprocessservice.OptimizationService"
             android:process=":remoteweb"/>
     </application>
 

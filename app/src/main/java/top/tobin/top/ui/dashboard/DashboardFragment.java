@@ -12,8 +12,8 @@ import com.tobin.top.R;
 import top.tobin.basic.base.BaseLazyFragment;
 import top.tobin.basic.utils.LogUtil;
 import top.tobin.basic.widgets.RecycleViewDivider;
+import top.tobin.recipe.ui.RecipeClassActivity;
 import top.tobin.top.ui.OnItemClickListener;
-import top.tobin.top.ui.recipe.RecipeClassActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +42,7 @@ public class DashboardFragment extends BaseLazyFragment<DashboardViewModel> {
 
     private  OnItemClickListener itemClickListener = (view, position, data) -> {
         if (view.getId() == R.id.card_view_dashboard_item && position == 0){
+
             Intent intent = new Intent(getActivity(), RecipeClassActivity.class);
             activity.startActivity(intent);
         }else if (view.getId() == R.id.card_view_dashboard_item && position == 1){
