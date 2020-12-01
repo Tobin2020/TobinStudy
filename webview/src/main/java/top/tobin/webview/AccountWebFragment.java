@@ -34,7 +34,6 @@ public class AccountWebFragment extends BaseWebViewFragment {
      *
      * @param url WebView要加载的url
      * @return true 同步cookie成功，false同步cookie失败
-     * @Author JPH
      */
     public static boolean syncCookie(String url, Map<String, String> map) {
         CookieManager cookieManager = CookieManager.getInstance();

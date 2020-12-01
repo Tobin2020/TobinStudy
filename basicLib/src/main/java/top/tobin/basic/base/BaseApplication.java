@@ -7,6 +7,9 @@ import android.net.Network;
 import android.net.NetworkRequest;
 
 import androidx.annotation.NonNull;
+import androidx.multidex.MultiDex;
+
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import io.reactivex.plugins.RxJavaPlugins;
 import top.tobin.basic.utils.LogUtil;
@@ -33,6 +36,15 @@ public class BaseApplication extends Application {
         });
 
         initNetworkMonitor();
+
+        // 初始化ARouter
+        if (true) {
+            // 打印日志
+            ARouter.openLog();
+            // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
     }
 
     private void initNetworkMonitor(){
@@ -51,6 +63,7 @@ public class BaseApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
 }
