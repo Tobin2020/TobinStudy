@@ -34,8 +34,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.tobin.top.R;
-
+import top.tobin.study.R;
 import top.tobin.study.ui.materialsearchview.utils.AnimationUtil;
 
 import java.lang.reflect.Field;

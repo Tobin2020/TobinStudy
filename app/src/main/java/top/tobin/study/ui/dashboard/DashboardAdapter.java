@@ -6,9 +6,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tobin.top.R;
-
 import top.tobin.basic.utils.LogUtil;
+import top.tobin.study.R;
 import top.tobin.study.ui.OnItemClickListener;
 
 import java.util.List;

@@ -12,6 +12,12 @@ import top.tobin.basic.net.OkHttpInstance;
  */
 class Api extends BaseApi {
 
+
+    @Override
+    protected final <T> Class getSer() {
+        return Api.class;
+    }
+
     private static class ApiHolder {
         private static Api api = new Api();
         private final static ApiStore apiService =
@@ -22,10 +28,6 @@ class Api extends BaseApi {
         return ApiHolder.apiService;
     }
 
-    @Override
-    protected OkHttpClient setClient() {
-        return OkHttpInstance.get();
-    }
 
 }
 

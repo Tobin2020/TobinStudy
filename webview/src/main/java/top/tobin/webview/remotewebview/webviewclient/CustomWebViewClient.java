@@ -32,14 +32,15 @@ public class CustomWebViewClient extends WebViewClient {
     private WebViewCallBack webViewCallBack;
     private WebView webView;
     boolean isReady;
+    private boolean isError;
     private Map<String, String> mHeaders;
-    private WebviewTouch mWebviewTouch;
+    private WebviewTouch mWebViewTouch;
 
     public CustomWebViewClient(WebView webView, WebViewCallBack webViewCallBack, Map<String, String> headers, WebviewTouch touch){
         this.webViewCallBack = webViewCallBack;
         this.webView = webView;
         this.mHeaders = headers;
-        this.mWebviewTouch = touch;
+        this.mWebViewTouch = touch;
     }
 
     public boolean isReady(){
@@ -59,7 +60,7 @@ public class CustomWebViewClient extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         Log.e(TAG, "shouldOverrideUrlLoading url: " + url);
         // 当前链接的重定向, 通过是否发生过点击行为来判断
-        if (!mWebviewTouch.isTouchByUser()) {
+        if (!mWebViewTouch.isTouchByUser()) {
             return super.shouldOverrideUrlLoading(view, url);
         }
         // 如果链接跟当前链接一样，表示刷新
@@ -82,7 +83,7 @@ public class CustomWebViewClient extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
         Log.e(TAG, "shouldOverrideUrlLoading url: "+ request.getUrl());
         // 当前链接的重定向
-        if (!mWebviewTouch.isTouchByUser()) {
+        if (!mWebViewTouch.isTouchByUser()) {
             return super.shouldOverrideUrlLoading(view, request);
         }
         // 如果链接跟当前链接一样，表示刷新
@@ -126,10 +127,16 @@ public class CustomWebViewClient extends WebViewClient {
         if (!TextUtils.isEmpty(url) && url.startsWith(BaseWebView.CONTENT_SCHEME)) {
             isReady = true;
         }
-        if (webViewCallBack != null) {
+        Log.e(TAG, "onPageFinished isError:" + isError);
+
+        if (webViewCallBack != null && !isError) {
             webViewCallBack.pageFinished(url);
         }
+
+        isError = false;
     }
+
+
 
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -151,16 +158,12 @@ public class CustomWebViewClient extends WebViewClient {
     }
 
     @Override
-    public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
-        return null;
-    }
-
-    @Override
     public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
         super.onReceivedError(view, errorCode, description, failingUrl);
-        Log.e(TAG, "webview error" + errorCode + " + " + description);
+        Log.e(TAG, "webview error " + errorCode + " + " + description);
+        isError = true;
         if (webViewCallBack != null) {
-            webViewCallBack.onError();
+            webViewCallBack.onError(description);
         }
     }
 

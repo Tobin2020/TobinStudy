@@ -3,6 +3,7 @@ package top.tobin.webview.basefragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Looper;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +14,16 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-//import com.demo.base.loadsir.LottieLoadingCallback;
+import top.tobin.basic.loadsir.ErrorCallback;
+import top.tobin.basic.loadsir.LottieEmptyCallback;
+import top.tobin.basic.loadsir.LottieLoadingCallback;
 import top.tobin.webview.R;
 import top.tobin.webview.remotewebview.BaseWebView;
 import top.tobin.webview.remotewebview.callback.WebViewCallBack;
 import top.tobin.webview.utils.WebConstants;
-//import com.kingja.loadsir.callback.Callback;
-//import com.kingja.loadsir.core.LoadService;
-//import com.kingja.loadsir.core.LoadSir;
+import com.kingja.loadsir.callback.Callback;
+import com.kingja.loadsir.core.LoadService;
+import com.kingja.loadsir.core.LoadSir;
 
 import java.util.HashMap;
 
@@ -30,7 +33,7 @@ public abstract class BaseWebViewFragment extends BaseFragment implements WebVie
     private BaseWebView webView;
     private HashMap<String, String> accountInfoHeaders;
     private String webUrl;
-//    private LoadService loadService;
+    private LoadService loadService;
 
     @LayoutRes
     protected abstract int getLayoutRes();
@@ -56,13 +59,15 @@ public abstract class BaseWebViewFragment extends BaseFragment implements WebVie
             webView.setHeaders(accountInfoHeaders);
         }
 
-//        loadService = LoadSir.getDefault().register(webView, new Callback.OnReloadListener() {
-//            @Override
-//            public void onReload(View v) {
-//                loadService.showCallback(LottieLoadingCallback.class);
-//                // your retry logic
-//            }
-//        });
+        loadService = LoadSir.getDefault().register(webView, new Callback.OnReloadListener() {
+            @Override
+            public void onReload(View v) {
+                Log.w("BaseWebViewFragment","onReload ");
+                loadService.showCallback(LottieLoadingCallback.class);
+                // your retry logic
+                loadUrl();
+            }
+        });
         return view;
     }
 
@@ -113,12 +118,12 @@ public abstract class BaseWebViewFragment extends BaseFragment implements WebVie
 
     @Override
     public void pageStarted(String url) {
-//        loadService.showCallback(LottieLoadingCallback.class);
+        loadService.showCallback(LottieLoadingCallback.class);
     }
 
     @Override
     public void pageFinished(String url) {
-//        loadService.showSuccess();
+        loadService.showSuccess();
     }
 
     @Override
@@ -127,7 +132,9 @@ public abstract class BaseWebViewFragment extends BaseFragment implements WebVie
     }
 
     @Override
-    public void onError() {
+    public void onError(String description){
+        loadService.showCallback(ErrorCallback.class);
+//        loadService.showCallback(LottieEmptyCallback.class);
 
     }
 

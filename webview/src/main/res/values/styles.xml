@@ -1,7 +1,5 @@
 <resources>
     <style name="Web_Activity_Theme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="background">@android:color/transparent</item>
         <!-- 状态栏颜色 -->

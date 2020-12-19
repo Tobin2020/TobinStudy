@@ -32,5 +32,9 @@ public abstract class BaseApi {
         return builder.build();
     }
 
-    protected abstract OkHttpClient setClient();
+    protected OkHttpClient setClient(){
+        return OkHttpInstance.get();
+    }
+
+    protected abstract <T> Class getSer();
 }

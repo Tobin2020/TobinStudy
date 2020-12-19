@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.gyf.immersionbar.ImmersionBar;
-import com.tobin.top.R;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
@@ -14,6 +13,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import top.tobin.basic.base.BaseActivity;
 import top.tobin.basic.lifecycle.BaseViewModel;
+import top.tobin.study.R;
 
 public class MainActivity extends BaseActivity {
     private Toolbar toolbar;
@@ -37,7 +37,6 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);  //加载Toolbar控件
-
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setItemTextAppearanceInactive(0);

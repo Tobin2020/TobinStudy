@@ -17,7 +17,7 @@ public interface WebViewCallBack {
 
     boolean overrideUrlLoading(WebView view, String url);
 
-    void onError();
+    void onError(String description);
 
     void exec(Context context, int commandLevel, String cmd, String params, WebView webView);
 }

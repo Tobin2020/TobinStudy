@@ -1,4 +1,4 @@
-package top.tobin.basic.net;
+package top.tobin.basic.net.download;
 
 import android.text.TextUtils;
 

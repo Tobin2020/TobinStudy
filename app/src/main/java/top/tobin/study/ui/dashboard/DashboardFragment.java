@@ -7,12 +7,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.tobin.top.R;
-
 import top.tobin.basic.base.BaseLazyFragment;
 import top.tobin.basic.utils.LogUtil;
 import top.tobin.basic.widgets.RecycleViewDivider;
 import top.tobin.recipe.ui.RecipeClassActivity;
+import top.tobin.study.R;
 import top.tobin.study.ui.OnItemClickListener;
 
 import java.util.ArrayList;

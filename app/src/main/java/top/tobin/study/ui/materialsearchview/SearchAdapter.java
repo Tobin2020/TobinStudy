@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tobin.top.R;
+import top.tobin.study.R;
 
 /**
  * Suggestions Adapter.

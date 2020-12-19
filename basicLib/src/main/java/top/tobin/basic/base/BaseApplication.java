@@ -10,8 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.kingja.loadsir.core.LoadSir;
 
 import io.reactivex.plugins.RxJavaPlugins;
+import top.tobin.basic.loadsir.CustomCallback;
+import top.tobin.basic.loadsir.ErrorCallback;
+import top.tobin.basic.loadsir.LottieEmptyCallback;
+import top.tobin.basic.loadsir.LottieLoadingCallback;
+import top.tobin.basic.loadsir.TimeoutCallback;
 import top.tobin.basic.utils.LogUtil;
 
 /**
@@ -45,6 +51,16 @@ public class BaseApplication extends Application {
             ARouter.openDebug();
         }
         ARouter.init(this);
+
+        // 设置LoadSir的各类状态View
+        LoadSir.beginBuilder()
+                .addCallback(new ErrorCallback())
+                .addCallback(new LottieEmptyCallback())
+                .addCallback(new LottieLoadingCallback())
+                .addCallback(new TimeoutCallback())
+                .addCallback(new CustomCallback())
+                .setDefaultCallback(LottieLoadingCallback.class)
+                .commit();
     }
 
     private void initNetworkMonitor(){
